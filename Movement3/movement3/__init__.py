@@ -9,7 +9,6 @@ from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
 from decimal import *
 
-#https://groupme.com/join_group/52315417/4WhPRX9a
 
 #----------------------------------------------------------------------- CONFIG
 
