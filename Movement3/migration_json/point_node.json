@@ -1,0 +1,1682 @@
+[
+    {
+        "id": 1,
+        "timestamp": "2021-06-22T11:10:10.109202",
+        "reps": 3.13,
+        "weight": 0.0,
+        "user_id": 2,
+        "exercise_id": 1
+    },
+    {
+        "id": 2,
+        "timestamp": "2021-06-22T11:24:18.286592",
+        "reps": 7.0,
+        "weight": 0.0,
+        "user_id": 4,
+        "exercise_id": 17
+    },
+    {
+        "id": 3,
+        "timestamp": "2021-06-22T11:25:13.442551",
+        "reps": 7.0,
+        "weight": 30.0,
+        "user_id": 4,
+        "exercise_id": 17
+    },
+    {
+        "id": 4,
+        "timestamp": "2021-06-22T11:26:16.240900",
+        "reps": 1.87,
+        "weight": 0.0,
+        "user_id": 4,
+        "exercise_id": 1
+    },
+    {
+        "id": 5,
+        "timestamp": "2021-06-22T11:54:37.089252",
+        "reps": 1.0,
+        "weight": 0.0,
+        "user_id": 1,
+        "exercise_id": 22
+    },
+    {
+        "id": 6,
+        "timestamp": "2021-06-22T11:55:48.359727",
+        "reps": 5.0,
+        "weight": 0.0,
+        "user_id": 3,
+        "exercise_id": 18
+    },
+    {
+        "id": 7,
+        "timestamp": "2021-06-22T13:44:44.359706",
+        "reps": 50.0,
+        "weight": 0.0,
+        "user_id": 7,
+        "exercise_id": 15
+    },
+    {
+        "id": 8,
+        "timestamp": "2021-06-22T13:45:02.622558",
+        "reps": 20.0,
+        "weight": 0.0,
+        "user_id": 7,
+        "exercise_id": 27
+    },
+    {
+        "id": 9,
+        "timestamp": "2021-06-22T13:45:14.899869",
+        "reps": 75.0,
+        "weight": 0.0,
+        "user_id": 7,
+        "exercise_id": 21
+    },
+    {
+        "id": 10,
+        "timestamp": "2021-06-22T14:24:12.038621",
+        "reps": 24.0,
+        "weight": 0.0,
+        "user_id": 5,
+        "exercise_id": 42
+    },
+    {
+        "id": 11,
+        "timestamp": "2021-06-22T14:53:36.975864",
+        "reps": 25.0,
+        "weight": 15.0,
+        "user_id": 3,
+        "exercise_id": 23
+    },
+    {
+        "id": 12,
+        "timestamp": "2021-06-22T14:53:40.179294",
+        "reps": 25.0,
+        "weight": 15.0,
+        "user_id": 3,
+        "exercise_id": 23
+    },
+    {
+        "id": 13,
+        "timestamp": "2021-06-22T14:54:50.119664",
+        "reps": 25.0,
+        "weight": 0.0,
+        "user_id": 3,
+        "exercise_id": 15
+    },
+    {
+        "id": 14,
+        "timestamp": "2021-06-22T14:56:38.514737",
+        "reps": 1.0,
+        "weight": 60.0,
+        "user_id": 3,
+        "exercise_id": 17
+    },
+    {
+        "id": 15,
+        "timestamp": "2021-06-22T15:04:58.738292",
+        "reps": 1.97,
+        "weight": 0.0,
+        "user_id": 1,
+        "exercise_id": 1
+    },
+    {
+        "id": 16,
+        "timestamp": "2021-06-22T15:07:56.724551",
+        "reps": 10.0,
+        "weight": 15.0,
+        "user_id": 3,
+        "exercise_id": 10
+    },
+    {
+        "id": 17,
+        "timestamp": "2021-06-22T15:07:57.741239",
+        "reps": 10.0,
+        "weight": 15.0,
+        "user_id": 3,
+        "exercise_id": 10
+    },
+    {
+        "id": 18,
+        "timestamp": "2021-06-22T16:25:09.612328",
+        "reps": 1.36,
+        "weight": 0.0,
+        "user_id": 5,
+        "exercise_id": 1
+    },
+    {
+        "id": 19,
+        "timestamp": "2021-06-22T18:03:20.693917",
+        "reps": 20.0,
+        "weight": 0.0,
+        "user_id": 2,
+        "exercise_id": 38
+    },
+    {
+        "id": 20,
+        "timestamp": "2021-06-22T18:08:38.522539",
+        "reps": 20.0,
+        "weight": 0.0,
+        "user_id": 1,
+        "exercise_id": 38
+    },
+    {
+        "id": 21,
+        "timestamp": "2021-06-22T18:09:41.842398",
+        "reps": 16.0,
+        "weight": 0.0,
+        "user_id": 5,
+        "exercise_id": 42
+    },
+    {
+        "id": 22,
+        "timestamp": "2021-06-22T18:29:56.655181",
+        "reps": 30.0,
+        "weight": 0.0,
+        "user_id": 7,
+        "exercise_id": 41
+    },
+    {
+        "id": 23,
+        "timestamp": "2021-06-22T18:35:24.905801",
+        "reps": 1.0,
+        "weight": 60.0,
+        "user_id": 3,
+        "exercise_id": 17
+    },
+    {
+        "id": 24,
+        "timestamp": "2021-06-22T19:00:04.466346",
+        "reps": 2.41,
+        "weight": 0.0,
+        "user_id": 2,
+        "exercise_id": 1
+    },
+    {
+        "id": 25,
+        "timestamp": "2021-06-22T19:00:13.565800",
+        "reps": 2.41,
+        "weight": 0.0,
+        "user_id": 1,
+        "exercise_id": 1
+    },
+    {
+        "id": 26,
+        "timestamp": "2021-06-22T19:04:52.540221",
+        "reps": 0.82,
+        "weight": 0.0,
+        "user_id": 3,
+        "exercise_id": 1
+    },
+    {
+        "id": 27,
+        "timestamp": "2021-06-22T19:04:53.573012",
+        "reps": 0.82,
+        "weight": 0.0,
+        "user_id": 3,
+        "exercise_id": 1
+    },
+    {
+        "id": 28,
+        "timestamp": "2021-06-22T21:10:50.376621",
+        "reps": 1.52,
+        "weight": 0.0,
+        "user_id": 2,
+        "exercise_id": 1
+    },
+    {
+        "id": 29,
+        "timestamp": "2021-06-22T21:11:08.654767",
+        "reps": 1.52,
+        "weight": 0.0,
+        "user_id": 1,
+        "exercise_id": 1
+    },
+    {
+        "id": 30,
+        "timestamp": "2021-06-22T21:45:49.758837",
+        "reps": 1.52,
+        "weight": 0.0,
+        "user_id": 3,
+        "exercise_id": 1
+    },
+    {
+        "id": 31,
+        "timestamp": "2021-06-22T22:42:12.554531",
+        "reps": 15.0,
+        "weight": 0.0,
+        "user_id": 6,
+        "exercise_id": 23
+    },
+    {
+        "id": 32,
+        "timestamp": "2021-06-22T22:42:31.319413",
+        "reps": 2.0,
+        "weight": 0.0,
+        "user_id": 6,
+        "exercise_id": 29
+    },
+    {
+        "id": 33,
+        "timestamp": "2021-06-23T00:05:31.307806",
+        "reps": 20.0,
+        "weight": 0.0,
+        "user_id": 3,
+        "exercise_id": 23
+    },
+    {
+        "id": 34,
+        "timestamp": "2021-06-23T00:05:35.218759",
+        "reps": 15.0,
+        "weight": 0.0,
+        "user_id": 6,
+        "exercise_id": 23
+    },
+    {
+        "id": 35,
+        "timestamp": "2021-06-23T00:05:37.299131",
+        "reps": 15.0,
+        "weight": 0.0,
+        "user_id": 6,
+        "exercise_id": 23
+    },
+    {
+        "id": 36,
+        "timestamp": "2021-06-23T00:07:09.750328",
+        "reps": 14.0,
+        "weight": 0.0,
+        "user_id": 3,
+        "exercise_id": 23
+    },
+    {
+        "id": 37,
+        "timestamp": "2021-06-23T00:07:29.722991",
+        "reps": 10.0,
+        "weight": 0.0,
+        "user_id": 1,
+        "exercise_id": 23
+    },
+    {
+        "id": 38,
+        "timestamp": "2021-06-23T00:07:52.074370",
+        "reps": 10.0,
+        "weight": 0.0,
+        "user_id": 1,
+        "exercise_id": 25
+    },
+    {
+        "id": 39,
+        "timestamp": "2021-06-23T00:14:31.955039",
+        "reps": 1.0,
+        "weight": 60.0,
+        "user_id": 3,
+        "exercise_id": 17
+    },
+    {
+        "id": 40,
+        "timestamp": "2021-06-23T00:14:43.584781",
+        "reps": 1.0,
+        "weight": 60.0,
+        "user_id": 1,
+        "exercise_id": 17
+    },
+    {
+        "id": 41,
+        "timestamp": "2021-06-23T00:18:00.291131",
+        "reps": 10.0,
+        "weight": 0.0,
+        "user_id": 1,
+        "exercise_id": 18
+    },
+    {
+        "id": 42,
+        "timestamp": "2021-06-23T00:18:59.196721",
+        "reps": 3.0,
+        "weight": 0.0,
+        "user_id": 3,
+        "exercise_id": 18
+    },
+    {
+        "id": 43,
+        "timestamp": "2021-06-23T00:19:00.422645",
+        "reps": 3.0,
+        "weight": 0.0,
+        "user_id": 3,
+        "exercise_id": 18
+    },
+    {
+        "id": 44,
+        "timestamp": "2021-06-23T00:19:26.299764",
+        "reps": 2.0,
+        "weight": 30.0,
+        "user_id": 3,
+        "exercise_id": 43
+    },
+    {
+        "id": 45,
+        "timestamp": "2021-06-23T00:19:27.241053",
+        "reps": 2.0,
+        "weight": 30.0,
+        "user_id": 3,
+        "exercise_id": 43
+    },
+    {
+        "id": 46,
+        "timestamp": "2021-06-23T01:30:57.963175",
+        "reps": 15.0,
+        "weight": 0.0,
+        "user_id": 7,
+        "exercise_id": 44
+    },
+    {
+        "id": 47,
+        "timestamp": "2021-06-23T11:02:48.096476",
+        "reps": 2.0,
+        "weight": 0.0,
+        "user_id": 4,
+        "exercise_id": 1
+    },
+    {
+        "id": 48,
+        "timestamp": "2021-06-23T11:03:07.948780",
+        "reps": 4.0,
+        "weight": 30.0,
+        "user_id": 4,
+        "exercise_id": 43
+    },
+    {
+        "id": 49,
+        "timestamp": "2021-06-23T11:03:24.221003",
+        "reps": 6.0,
+        "weight": 45.0,
+        "user_id": 4,
+        "exercise_id": 17
+    },
+    {
+        "id": 50,
+        "timestamp": "2021-06-23T12:03:41.552954",
+        "reps": 1.5,
+        "weight": 0.0,
+        "user_id": 4,
+        "exercise_id": 1
+    },
+    {
+        "id": 51,
+        "timestamp": "2021-06-23T12:28:32.374188",
+        "reps": 1.05,
+        "weight": 0.0,
+        "user_id": 3,
+        "exercise_id": 1
+    },
+    {
+        "id": 53,
+        "timestamp": "2021-06-23T12:36:31.842397",
+        "reps": 20.0,
+        "weight": 0.0,
+        "user_id": 3,
+        "exercise_id": 15
+    },
+    {
+        "id": 54,
+        "timestamp": "2021-06-23T12:38:18.190644",
+        "reps": 2.0,
+        "weight": 30.0,
+        "user_id": 3,
+        "exercise_id": 43
+    },
+    {
+        "id": 55,
+        "timestamp": "2021-06-23T12:38:19.037987",
+        "reps": 2.0,
+        "weight": 30.0,
+        "user_id": 3,
+        "exercise_id": 43
+    },
+    {
+        "id": 56,
+        "timestamp": "2021-06-23T12:45:16.549920",
+        "reps": 10.0,
+        "weight": 15.0,
+        "user_id": 3,
+        "exercise_id": 10
+    },
+    {
+        "id": 57,
+        "timestamp": "2021-06-23T12:46:41.934578",
+        "reps": 10.0,
+        "weight": 15.0,
+        "user_id": 3,
+        "exercise_id": 31
+    },
+    {
+        "id": 58,
+        "timestamp": "2021-06-23T12:46:43.313369",
+        "reps": 10.0,
+        "weight": 15.0,
+        "user_id": 3,
+        "exercise_id": 31
+    },
+    {
+        "id": 59,
+        "timestamp": "2021-06-23T13:01:14.047342",
+        "reps": 331.0,
+        "weight": 0.0,
+        "user_id": 7,
+        "exercise_id": 8
+    },
+    {
+        "id": 62,
+        "timestamp": "2021-06-23T13:17:09.037928",
+        "reps": 30.0,
+        "weight": 30.0,
+        "user_id": 7,
+        "exercise_id": 33
+    },
+    {
+        "id": 63,
+        "timestamp": "2021-06-23T13:18:47.658165",
+        "reps": 30.0,
+        "weight": 25.0,
+        "user_id": 7,
+        "exercise_id": 20
+    },
+    {
+        "id": 64,
+        "timestamp": "2021-06-23T13:26:18.791505",
+        "reps": 30.0,
+        "weight": 10.0,
+        "user_id": 7,
+        "exercise_id": 31
+    },
+    {
+        "id": 65,
+        "timestamp": "2021-06-23T13:31:26.774956",
+        "reps": 10.0,
+        "weight": 10.0,
+        "user_id": 7,
+        "exercise_id": 30
+    },
+    {
+        "id": 66,
+        "timestamp": "2021-06-23T13:31:52.296529",
+        "reps": 30.0,
+        "weight": 25.0,
+        "user_id": 7,
+        "exercise_id": 45
+    },
+    {
+        "id": 67,
+        "timestamp": "2021-06-23T13:32:06.509401",
+        "reps": 20.0,
+        "weight": 10.0,
+        "user_id": 7,
+        "exercise_id": 30
+    },
+    {
+        "id": 68,
+        "timestamp": "2021-06-23T14:08:45.490451",
+        "reps": 4.5,
+        "weight": 0.0,
+        "user_id": 9,
+        "exercise_id": 5
+    },
+    {
+        "id": 69,
+        "timestamp": "2021-06-23T14:08:46.534739",
+        "reps": 4.5,
+        "weight": 0.0,
+        "user_id": 9,
+        "exercise_id": 5
+    },
+    {
+        "id": 70,
+        "timestamp": "2021-06-23T14:57:13.779112",
+        "reps": 8.0,
+        "weight": 0.0,
+        "user_id": 2,
+        "exercise_id": 12
+    },
+    {
+        "id": 71,
+        "timestamp": "2021-06-23T14:57:24.075595",
+        "reps": 20.0,
+        "weight": 0.0,
+        "user_id": 2,
+        "exercise_id": 23
+    },
+    {
+        "id": 72,
+        "timestamp": "2021-06-23T16:02:20.943059",
+        "reps": 0.83,
+        "weight": 0.0,
+        "user_id": 3,
+        "exercise_id": 1
+    },
+    {
+        "id": 75,
+        "timestamp": "2021-06-23T16:17:31.085465",
+        "reps": 3.0,
+        "weight": 0.0,
+        "user_id": 7,
+        "exercise_id": 44
+    },
+    {
+        "id": 76,
+        "timestamp": "2021-06-23T17:47:31.467164",
+        "reps": 15.0,
+        "weight": 0.0,
+        "user_id": 2,
+        "exercise_id": 18
+    },
+    {
+        "id": 77,
+        "timestamp": "2021-06-23T18:08:05.223966",
+        "reps": 4.32,
+        "weight": 0.0,
+        "user_id": 2,
+        "exercise_id": 2
+    },
+    {
+        "id": 78,
+        "timestamp": "2021-06-23T18:57:39.826127",
+        "reps": 1.35,
+        "weight": 0.0,
+        "user_id": 5,
+        "exercise_id": 1
+    },
+    {
+        "id": 79,
+        "timestamp": "2021-06-23T19:00:19.586393",
+        "reps": 24.0,
+        "weight": 25.0,
+        "user_id": 5,
+        "exercise_id": 10
+    },
+    {
+        "id": 80,
+        "timestamp": "2021-06-23T19:03:26.190405",
+        "reps": 8.0,
+        "weight": 30.0,
+        "user_id": 5,
+        "exercise_id": 33
+    },
+    {
+        "id": 81,
+        "timestamp": "2021-06-23T19:03:36.579479",
+        "reps": 24.0,
+        "weight": 0.0,
+        "user_id": 5,
+        "exercise_id": 42
+    },
+    {
+        "id": 82,
+        "timestamp": "2021-06-23T19:03:54.167780",
+        "reps": 32.0,
+        "weight": 40.0,
+        "user_id": 5,
+        "exercise_id": 25
+    },
+    {
+        "id": 83,
+        "timestamp": "2021-06-23T19:04:06.683753",
+        "reps": 8.0,
+        "weight": 70.0,
+        "user_id": 5,
+        "exercise_id": 9
+    },
+    {
+        "id": 84,
+        "timestamp": "2021-06-23T19:04:22.089662",
+        "reps": 16.0,
+        "weight": 50.0,
+        "user_id": 5,
+        "exercise_id": 23
+    },
+    {
+        "id": 85,
+        "timestamp": "2021-06-23T19:04:46.598512",
+        "reps": 32.0,
+        "weight": 25.0,
+        "user_id": 5,
+        "exercise_id": 21
+    },
+    {
+        "id": 86,
+        "timestamp": "2021-06-23T19:30:15.157150",
+        "reps": 1.0,
+        "weight": 0.0,
+        "user_id": 4,
+        "exercise_id": 1
+    },
+    {
+        "id": 87,
+        "timestamp": "2021-06-23T19:30:56.682466",
+        "reps": 10.0,
+        "weight": 0.0,
+        "user_id": 4,
+        "exercise_id": 6
+    },
+    {
+        "id": 88,
+        "timestamp": "2021-06-23T19:31:55.314531",
+        "reps": 30.0,
+        "weight": 10.0,
+        "user_id": 4,
+        "exercise_id": 23
+    },
+    {
+        "id": 89,
+        "timestamp": "2021-06-23T21:03:04.932669",
+        "reps": 5.0,
+        "weight": 0.0,
+        "user_id": 1,
+        "exercise_id": 47
+    },
+    {
+        "id": 90,
+        "timestamp": "2021-06-23T21:09:04.883933",
+        "reps": 4.0,
+        "weight": 0.0,
+        "user_id": 1,
+        "exercise_id": 47
+    },
+    {
+        "id": 91,
+        "timestamp": "2021-06-23T21:09:15.615491",
+        "reps": 9.0,
+        "weight": 0.0,
+        "user_id": 3,
+        "exercise_id": 47
+    },
+    {
+        "id": 92,
+        "timestamp": "2021-06-23T21:09:34.608996",
+        "reps": 9.0,
+        "weight": 0.0,
+        "user_id": 4,
+        "exercise_id": 47
+    },
+    {
+        "id": 93,
+        "timestamp": "2021-06-23T21:09:36.195366",
+        "reps": 9.0,
+        "weight": 0.0,
+        "user_id": 4,
+        "exercise_id": 47
+    },
+    {
+        "id": 94,
+        "timestamp": "2021-06-23T21:33:41.257917",
+        "reps": 6.0,
+        "weight": 0.0,
+        "user_id": 9,
+        "exercise_id": 40
+    },
+    {
+        "id": 95,
+        "timestamp": "2021-06-23T21:41:43.909402",
+        "reps": 1.8,
+        "weight": 0.0,
+        "user_id": 10,
+        "exercise_id": 5
+    },
+    {
+        "id": 96,
+        "timestamp": "2021-06-23T21:42:08.842222",
+        "reps": 6.0,
+        "weight": 0.0,
+        "user_id": 10,
+        "exercise_id": 7
+    },
+    {
+        "id": 97,
+        "timestamp": "2021-06-23T21:46:34.324950",
+        "reps": 4.0,
+        "weight": 30.0,
+        "user_id": 10,
+        "exercise_id": 23
+    },
+    {
+        "id": 98,
+        "timestamp": "2021-06-23T21:46:58.115099",
+        "reps": 4.0,
+        "weight": 30.0,
+        "user_id": 10,
+        "exercise_id": 25
+    },
+    {
+        "id": 99,
+        "timestamp": "2021-06-23T21:48:30.681204",
+        "reps": 192.0,
+        "weight": 0.0,
+        "user_id": 10,
+        "exercise_id": 28
+    },
+    {
+        "id": 101,
+        "timestamp": "2021-06-23T21:51:06.915895",
+        "reps": 3.0,
+        "weight": 30.0,
+        "user_id": 10,
+        "exercise_id": 43
+    },
+    {
+        "id": 102,
+        "timestamp": "2021-06-23T21:51:35.045812",
+        "reps": 18.0,
+        "weight": 0.0,
+        "user_id": 10,
+        "exercise_id": 29
+    },
+    {
+        "id": 103,
+        "timestamp": "2021-06-23T21:51:48.697554",
+        "reps": 3.0,
+        "weight": 30.0,
+        "user_id": 10,
+        "exercise_id": 17
+    },
+    {
+        "id": 104,
+        "timestamp": "2021-06-23T21:52:42.987813",
+        "reps": 36.0,
+        "weight": 0.0,
+        "user_id": 10,
+        "exercise_id": 25
+    },
+    {
+        "id": 105,
+        "timestamp": "2021-06-23T22:03:21.172657",
+        "reps": 2.17,
+        "weight": 0.0,
+        "user_id": 4,
+        "exercise_id": 1
+    },
+    {
+        "id": 106,
+        "timestamp": "2021-06-23T22:03:29.785839",
+        "reps": 2.17,
+        "weight": 0.0,
+        "user_id": 3,
+        "exercise_id": 1
+    },
+    {
+        "id": 107,
+        "timestamp": "2021-06-23T22:03:52.813518",
+        "reps": 2.17,
+        "weight": 0.0,
+        "user_id": 1,
+        "exercise_id": 1
+    },
+    {
+        "id": 108,
+        "timestamp": "2021-06-23T23:43:48.545774",
+        "reps": 0.6,
+        "weight": 0.0,
+        "user_id": 10,
+        "exercise_id": 1
+    },
+    {
+        "id": 109,
+        "timestamp": "2021-06-24T00:42:57.915681",
+        "reps": 1.0,
+        "weight": 120.0,
+        "user_id": 2,
+        "exercise_id": 17
+    },
+    {
+        "id": 110,
+        "timestamp": "2021-06-24T14:24:57.902313",
+        "reps": 50.0,
+        "weight": 0.0,
+        "user_id": 1,
+        "exercise_id": 18
+    },
+    {
+        "id": 111,
+        "timestamp": "2021-06-24T14:25:06.460542",
+        "reps": 100.0,
+        "weight": 0.0,
+        "user_id": 1,
+        "exercise_id": 22
+    },
+    {
+        "id": 112,
+        "timestamp": "2021-06-24T14:29:14.484365",
+        "reps": 1.0,
+        "weight": 60.0,
+        "user_id": 1,
+        "exercise_id": 17
+    },
+    {
+        "id": 113,
+        "timestamp": "2021-06-24T14:34:31.140525",
+        "reps": 1.0,
+        "weight": 60.0,
+        "user_id": 1,
+        "exercise_id": 17
+    },
+    {
+        "id": 114,
+        "timestamp": "2021-06-24T14:38:19.403515",
+        "reps": 25.0,
+        "weight": 0.0,
+        "user_id": 1,
+        "exercise_id": 25
+    },
+    {
+        "id": 115,
+        "timestamp": "2021-06-24T14:40:37.743935",
+        "reps": 10.0,
+        "weight": 0.0,
+        "user_id": 1,
+        "exercise_id": 23
+    },
+    {
+        "id": 116,
+        "timestamp": "2021-06-24T14:47:00.594174",
+        "reps": 10.0,
+        "weight": 0.0,
+        "user_id": 1,
+        "exercise_id": 18
+    },
+    {
+        "id": 117,
+        "timestamp": "2021-06-24T14:47:07.034319",
+        "reps": 10.0,
+        "weight": 0.0,
+        "user_id": 1,
+        "exercise_id": 22
+    },
+    {
+        "id": 118,
+        "timestamp": "2021-06-24T14:49:14.599558",
+        "reps": 45.0,
+        "weight": 0.0,
+        "user_id": 8,
+        "exercise_id": 46
+    },
+    {
+        "id": 119,
+        "timestamp": "2021-06-24T14:50:01.420534",
+        "reps": 12.0,
+        "weight": 0.0,
+        "user_id": 8,
+        "exercise_id": 14
+    },
+    {
+        "id": 120,
+        "timestamp": "2021-06-24T14:50:32.438419",
+        "reps": 30.0,
+        "weight": 0.0,
+        "user_id": 8,
+        "exercise_id": 23
+    },
+    {
+        "id": 121,
+        "timestamp": "2021-06-24T14:50:46.228098",
+        "reps": 50.0,
+        "weight": 0.0,
+        "user_id": 8,
+        "exercise_id": 15
+    },
+    {
+        "id": 122,
+        "timestamp": "2021-06-24T15:29:37.330456",
+        "reps": 50.0,
+        "weight": 0.0,
+        "user_id": 6,
+        "exercise_id": 42
+    },
+    {
+        "id": 123,
+        "timestamp": "2021-06-24T17:11:33.613942",
+        "reps": 2.4,
+        "weight": 0.0,
+        "user_id": 1,
+        "exercise_id": 1
+    },
+    {
+        "id": 124,
+        "timestamp": "2021-06-24T17:13:07.722257",
+        "reps": 2.4,
+        "weight": 0.0,
+        "user_id": 3,
+        "exercise_id": 1
+    },
+    {
+        "id": 125,
+        "timestamp": "2021-06-24T22:55:23.519277",
+        "reps": 1.4,
+        "weight": 0.0,
+        "user_id": 2,
+        "exercise_id": 1
+    },
+    {
+        "id": 126,
+        "timestamp": "2021-06-25T00:55:50.765112",
+        "reps": 50.0,
+        "weight": 15.0,
+        "user_id": 3,
+        "exercise_id": 21
+    },
+    {
+        "id": 128,
+        "timestamp": "2021-06-25T01:54:50.951909",
+        "reps": 30.0,
+        "weight": 0.0,
+        "user_id": 8,
+        "exercise_id": 47
+    },
+    {
+        "id": 129,
+        "timestamp": "2021-06-25T01:55:59.594905",
+        "reps": 25.0,
+        "weight": 0.0,
+        "user_id": 8,
+        "exercise_id": 18
+    },
+    {
+        "id": 130,
+        "timestamp": "2021-06-25T01:56:41.547404",
+        "reps": 50.0,
+        "weight": 0.0,
+        "user_id": 8,
+        "exercise_id": 22
+    },
+    {
+        "id": 131,
+        "timestamp": "2021-06-25T01:57:35.238859",
+        "reps": 20.0,
+        "weight": 0.0,
+        "user_id": 8,
+        "exercise_id": 25
+    },
+    {
+        "id": 132,
+        "timestamp": "2021-06-25T03:52:53.723079",
+        "reps": 2.0,
+        "weight": 0.0,
+        "user_id": 6,
+        "exercise_id": 1
+    },
+    {
+        "id": 133,
+        "timestamp": "2021-06-25T03:54:10.427344",
+        "reps": 54.0,
+        "weight": 0.0,
+        "user_id": 6,
+        "exercise_id": 42
+    },
+    {
+        "id": 134,
+        "timestamp": "2021-06-25T12:48:40.399168",
+        "reps": 0.815,
+        "weight": 0.0,
+        "user_id": 7,
+        "exercise_id": 5
+    },
+    {
+        "id": 135,
+        "timestamp": "2021-06-25T12:48:58.592928",
+        "reps": 0.666,
+        "weight": 0.0,
+        "user_id": 7,
+        "exercise_id": 1
+    },
+    {
+        "id": 136,
+        "timestamp": "2021-06-25T12:49:33.211396",
+        "reps": 0.12,
+        "weight": 0.0,
+        "user_id": 7,
+        "exercise_id": 1
+    },
+    {
+        "id": 137,
+        "timestamp": "2021-06-25T13:03:15.837577",
+        "reps": 10.0,
+        "weight": 70.0,
+        "user_id": 7,
+        "exercise_id": 32
+    },
+    {
+        "id": 138,
+        "timestamp": "2021-06-25T13:04:20.517586",
+        "reps": 10.0,
+        "weight": 80.0,
+        "user_id": 7,
+        "exercise_id": 32
+    },
+    {
+        "id": 139,
+        "timestamp": "2021-06-25T13:04:49.842805",
+        "reps": 10.0,
+        "weight": 80.0,
+        "user_id": 7,
+        "exercise_id": 32
+    },
+    {
+        "id": 140,
+        "timestamp": "2021-06-25T13:31:33.808968",
+        "reps": 10.0,
+        "weight": 0.0,
+        "user_id": 9,
+        "exercise_id": 14
+    },
+    {
+        "id": 141,
+        "timestamp": "2021-06-25T13:31:34.835815",
+        "reps": 10.0,
+        "weight": 0.0,
+        "user_id": 9,
+        "exercise_id": 14
+    },
+    {
+        "id": 142,
+        "timestamp": "2021-06-25T13:33:14.182860",
+        "reps": 10.0,
+        "weight": 0.0,
+        "user_id": 9,
+        "exercise_id": 14
+    },
+    {
+        "id": 143,
+        "timestamp": "2021-06-25T13:33:15.447434",
+        "reps": 10.0,
+        "weight": 0.0,
+        "user_id": 9,
+        "exercise_id": 14
+    },
+    {
+        "id": 144,
+        "timestamp": "2021-06-25T13:34:12.024341",
+        "reps": 10.0,
+        "weight": 0.0,
+        "user_id": 9,
+        "exercise_id": 15
+    },
+    {
+        "id": 145,
+        "timestamp": "2021-06-25T13:34:12.998514",
+        "reps": 10.0,
+        "weight": 0.0,
+        "user_id": 9,
+        "exercise_id": 15
+    },
+    {
+        "id": 146,
+        "timestamp": "2021-06-25T13:34:55.472059",
+        "reps": 10.0,
+        "weight": 0.0,
+        "user_id": 9,
+        "exercise_id": 18
+    },
+    {
+        "id": 147,
+        "timestamp": "2021-06-25T13:34:55.766021",
+        "reps": 10.0,
+        "weight": 0.0,
+        "user_id": 9,
+        "exercise_id": 18
+    },
+    {
+        "id": 148,
+        "timestamp": "2021-06-25T13:36:15.871877",
+        "reps": 10.0,
+        "weight": 0.0,
+        "user_id": 9,
+        "exercise_id": 18
+    },
+    {
+        "id": 149,
+        "timestamp": "2021-06-25T13:36:17.387913",
+        "reps": 10.0,
+        "weight": 0.0,
+        "user_id": 9,
+        "exercise_id": 18
+    },
+    {
+        "id": 150,
+        "timestamp": "2021-06-25T13:37:29.386583",
+        "reps": 10.0,
+        "weight": 0.0,
+        "user_id": 9,
+        "exercise_id": 18
+    },
+    {
+        "id": 151,
+        "timestamp": "2021-06-25T13:37:30.536861",
+        "reps": 10.0,
+        "weight": 0.0,
+        "user_id": 9,
+        "exercise_id": 18
+    },
+    {
+        "id": 152,
+        "timestamp": "2021-06-25T13:49:23.292768",
+        "reps": 0.59,
+        "weight": 0.0,
+        "user_id": 9,
+        "exercise_id": 2
+    },
+    {
+        "id": 155,
+        "timestamp": "2021-06-25T13:54:22.218477",
+        "reps": 0.47,
+        "weight": 0.0,
+        "user_id": 9,
+        "exercise_id": 2
+    },
+    {
+        "id": 157,
+        "timestamp": "2021-06-25T13:55:47.809156",
+        "reps": 10.0,
+        "weight": 0.0,
+        "user_id": 9,
+        "exercise_id": 18
+    },
+    {
+        "id": 158,
+        "timestamp": "2021-06-25T13:55:53.581364",
+        "reps": 10.0,
+        "weight": 0.0,
+        "user_id": 9,
+        "exercise_id": 18
+    },
+    {
+        "id": 159,
+        "timestamp": "2021-06-25T14:58:38.328627",
+        "reps": 20.0,
+        "weight": 0.0,
+        "user_id": 7,
+        "exercise_id": 23
+    },
+    {
+        "id": 160,
+        "timestamp": "2021-06-25T14:59:04.790648",
+        "reps": 5.0,
+        "weight": 0.0,
+        "user_id": 7,
+        "exercise_id": 23
+    },
+    {
+        "id": 161,
+        "timestamp": "2021-06-25T15:04:15.448184",
+        "reps": 5.31,
+        "weight": 0.0,
+        "user_id": 3,
+        "exercise_id": 1
+    },
+    {
+        "id": 162,
+        "timestamp": "2021-06-25T15:29:14.876770",
+        "reps": 20.0,
+        "weight": 0.0,
+        "user_id": 9,
+        "exercise_id": 22
+    },
+    {
+        "id": 163,
+        "timestamp": "2021-06-25T15:29:16.137448",
+        "reps": 20.0,
+        "weight": 0.0,
+        "user_id": 9,
+        "exercise_id": 22
+    },
+    {
+        "id": 164,
+        "timestamp": "2021-06-25T15:30:28.274900",
+        "reps": 20.0,
+        "weight": 0.0,
+        "user_id": 9,
+        "exercise_id": 23
+    },
+    {
+        "id": 165,
+        "timestamp": "2021-06-25T15:30:29.112444",
+        "reps": 20.0,
+        "weight": 0.0,
+        "user_id": 9,
+        "exercise_id": 23
+    },
+    {
+        "id": 166,
+        "timestamp": "2021-06-25T15:32:43.228491",
+        "reps": 30.0,
+        "weight": 0.0,
+        "user_id": 9,
+        "exercise_id": 28
+    },
+    {
+        "id": 167,
+        "timestamp": "2021-06-25T15:32:44.215273",
+        "reps": 30.0,
+        "weight": 0.0,
+        "user_id": 9,
+        "exercise_id": 28
+    },
+    {
+        "id": 168,
+        "timestamp": "2021-06-25T15:33:58.140660",
+        "reps": 20.0,
+        "weight": 0.0,
+        "user_id": 9,
+        "exercise_id": 44
+    },
+    {
+        "id": 169,
+        "timestamp": "2021-06-25T15:33:59.077462",
+        "reps": 20.0,
+        "weight": 0.0,
+        "user_id": 9,
+        "exercise_id": 44
+    },
+    {
+        "id": 170,
+        "timestamp": "2021-06-25T15:56:07.986305",
+        "reps": 3.0,
+        "weight": 0.0,
+        "user_id": 7,
+        "exercise_id": 44
+    },
+    {
+        "id": 171,
+        "timestamp": "2021-06-25T15:56:24.885220",
+        "reps": 30.0,
+        "weight": 30.0,
+        "user_id": 7,
+        "exercise_id": 49
+    },
+    {
+        "id": 172,
+        "timestamp": "2021-06-25T15:56:40.279031",
+        "reps": 10.0,
+        "weight": 55.0,
+        "user_id": 7,
+        "exercise_id": 48
+    },
+    {
+        "id": 173,
+        "timestamp": "2021-06-25T15:57:00.904097",
+        "reps": 20.0,
+        "weight": 60.0,
+        "user_id": 7,
+        "exercise_id": 48
+    },
+    {
+        "id": 174,
+        "timestamp": "2021-06-25T18:17:20.576768",
+        "reps": 1.0,
+        "weight": 60.0,
+        "user_id": 3,
+        "exercise_id": 17
+    },
+    {
+        "id": 175,
+        "timestamp": "2021-06-25T18:45:34.762207",
+        "reps": 2.0,
+        "weight": 0.0,
+        "user_id": 4,
+        "exercise_id": 1
+    },
+    {
+        "id": 176,
+        "timestamp": "2021-06-25T18:52:19.501242",
+        "reps": 2.0,
+        "weight": 30.0,
+        "user_id": 3,
+        "exercise_id": 43
+    },
+    {
+        "id": 177,
+        "timestamp": "2021-06-25T19:08:03.121135",
+        "reps": 30.0,
+        "weight": 30.0,
+        "user_id": 7,
+        "exercise_id": 50
+    },
+    {
+        "id": 178,
+        "timestamp": "2021-06-25T20:34:23.731740",
+        "reps": 20.0,
+        "weight": 0.0,
+        "user_id": 4,
+        "exercise_id": 6
+    },
+    {
+        "id": 179,
+        "timestamp": "2021-06-25T20:34:33.075485",
+        "reps": 10.0,
+        "weight": 30.0,
+        "user_id": 4,
+        "exercise_id": 43
+    },
+    {
+        "id": 180,
+        "timestamp": "2021-06-25T20:56:24.305662",
+        "reps": 10.0,
+        "weight": 0.0,
+        "user_id": 7,
+        "exercise_id": 25
+    },
+    {
+        "id": 181,
+        "timestamp": "2021-06-25T20:57:22.580106",
+        "reps": 8.0,
+        "weight": 50.0,
+        "user_id": 5,
+        "exercise_id": 9
+    },
+    {
+        "id": 182,
+        "timestamp": "2021-06-25T20:57:56.850179",
+        "reps": 248.0,
+        "weight": 0.0,
+        "user_id": 5,
+        "exercise_id": 42
+    },
+    {
+        "id": 183,
+        "timestamp": "2021-06-25T20:58:10.751534",
+        "reps": 8.0,
+        "weight": 50.0,
+        "user_id": 5,
+        "exercise_id": 23
+    },
+    {
+        "id": 184,
+        "timestamp": "2021-06-25T20:58:30.691574",
+        "reps": 8.0,
+        "weight": 15.0,
+        "user_id": 5,
+        "exercise_id": 31
+    },
+    {
+        "id": 185,
+        "timestamp": "2021-06-25T20:59:07.840888",
+        "reps": 20.0,
+        "weight": 25.0,
+        "user_id": 5,
+        "exercise_id": 10
+    },
+    {
+        "id": 186,
+        "timestamp": "2021-06-25T20:59:18.767188",
+        "reps": 6.0,
+        "weight": 90.0,
+        "user_id": 5,
+        "exercise_id": 9
+    },
+    {
+        "id": 187,
+        "timestamp": "2021-06-25T21:00:12.267237",
+        "reps": 48.0,
+        "weight": 25.0,
+        "user_id": 5,
+        "exercise_id": 21
+    },
+    {
+        "id": 188,
+        "timestamp": "2021-06-25T21:00:29.721101",
+        "reps": 8.0,
+        "weight": 40.0,
+        "user_id": 5,
+        "exercise_id": 25
+    },
+    {
+        "id": 189,
+        "timestamp": "2021-06-25T21:00:50.487846",
+        "reps": 24.0,
+        "weight": 0.0,
+        "user_id": 5,
+        "exercise_id": 28
+    },
+    {
+        "id": 190,
+        "timestamp": "2021-06-25T21:34:21.982141",
+        "reps": 20.0,
+        "weight": 0.0,
+        "user_id": 1,
+        "exercise_id": 22
+    },
+    {
+        "id": 191,
+        "timestamp": "2021-06-25T21:35:16.075465",
+        "reps": 10.0,
+        "weight": 0.0,
+        "user_id": 1,
+        "exercise_id": 18
+    },
+    {
+        "id": 192,
+        "timestamp": "2021-06-25T22:01:55.593931",
+        "reps": 3.7,
+        "weight": 0.0,
+        "user_id": 6,
+        "exercise_id": 1
+    },
+    {
+        "id": 193,
+        "timestamp": "2021-06-25T22:32:43.267389",
+        "reps": 0.7,
+        "weight": 0.0,
+        "user_id": 6,
+        "exercise_id": 1
+    },
+    {
+        "id": 194,
+        "timestamp": "2021-06-25T23:07:20.658642",
+        "reps": 226.0,
+        "weight": 0.0,
+        "user_id": 2,
+        "exercise_id": 8
+    },
+    {
+        "id": 195,
+        "timestamp": "2021-06-25T23:08:43.807682",
+        "reps": 15.0,
+        "weight": 0.0,
+        "user_id": 2,
+        "exercise_id": 18
+    },
+    {
+        "id": 196,
+        "timestamp": "2021-06-26T12:45:50.124190",
+        "reps": 10.0,
+        "weight": 15.0,
+        "user_id": 3,
+        "exercise_id": 10
+    },
+    {
+        "id": 197,
+        "timestamp": "2021-06-26T12:46:18.902509",
+        "reps": 10.0,
+        "weight": 15.0,
+        "user_id": 3,
+        "exercise_id": 31
+    },
+    {
+        "id": 198,
+        "timestamp": "2021-06-26T14:03:52.538947",
+        "reps": 1.0,
+        "weight": 90.0,
+        "user_id": 2,
+        "exercise_id": 17
+    },
+    {
+        "id": 199,
+        "timestamp": "2021-06-26T14:04:04.191133",
+        "reps": 15.0,
+        "weight": 0.0,
+        "user_id": 2,
+        "exercise_id": 23
+    },
+    {
+        "id": 200,
+        "timestamp": "2021-06-26T14:05:59.460913",
+        "reps": 15.0,
+        "weight": 0.0,
+        "user_id": 2,
+        "exercise_id": 18
+    },
+    {
+        "id": 201,
+        "timestamp": "2021-06-26T15:26:52.135619",
+        "reps": 2.9,
+        "weight": 0.0,
+        "user_id": 3,
+        "exercise_id": 1
+    },
+    {
+        "id": 202,
+        "timestamp": "2021-06-26T15:26:57.465044",
+        "reps": 2.9,
+        "weight": 0.0,
+        "user_id": 1,
+        "exercise_id": 1
+    },
+    {
+        "id": 203,
+        "timestamp": "2021-06-26T15:29:26.183437",
+        "reps": 1.0,
+        "weight": 30.0,
+        "user_id": 3,
+        "exercise_id": 43
+    },
+    {
+        "id": 204,
+        "timestamp": "2021-06-26T15:31:54.335160",
+        "reps": 10.0,
+        "weight": 0.0,
+        "user_id": 7,
+        "exercise_id": 23
+    },
+    {
+        "id": 205,
+        "timestamp": "2021-06-26T15:32:04.604192",
+        "reps": 10.0,
+        "weight": 0.0,
+        "user_id": 7,
+        "exercise_id": 25
+    },
+    {
+        "id": 206,
+        "timestamp": "2021-06-26T15:32:13.122111",
+        "reps": 10.0,
+        "weight": 0.0,
+        "user_id": 7,
+        "exercise_id": 29
+    },
+    {
+        "id": 207,
+        "timestamp": "2021-06-26T15:33:24.593710",
+        "reps": 50.0,
+        "weight": 0.0,
+        "user_id": 7,
+        "exercise_id": 21
+    },
+    {
+        "id": 208,
+        "timestamp": "2021-06-26T15:33:59.970840",
+        "reps": 10.0,
+        "weight": 0.0,
+        "user_id": 7,
+        "exercise_id": 15
+    },
+    {
+        "id": 209,
+        "timestamp": "2021-06-26T15:34:22.195489",
+        "reps": 5.0,
+        "weight": 0.0,
+        "user_id": 7,
+        "exercise_id": 15
+    },
+    {
+        "id": 210,
+        "timestamp": "2021-06-26T15:34:38.633686",
+        "reps": 5.0,
+        "weight": 0.0,
+        "user_id": 7,
+        "exercise_id": 15
+    },
+    {
+        "id": 211,
+        "timestamp": "2021-06-26T15:46:58.812608",
+        "reps": 15.0,
+        "weight": 0.0,
+        "user_id": 2,
+        "exercise_id": 18
+    },
+    {
+        "id": 212,
+        "timestamp": "2021-06-26T15:47:07.846142",
+        "reps": 15.0,
+        "weight": 0.0,
+        "user_id": 2,
+        "exercise_id": 23
+    },
+    {
+        "id": 213,
+        "timestamp": "2021-06-26T15:47:52.425154",
+        "reps": 10.0,
+        "weight": 0.0,
+        "user_id": 1,
+        "exercise_id": 19
+    },
+    {
+        "id": 214,
+        "timestamp": "2021-06-26T15:48:13.525193",
+        "reps": 10.0,
+        "weight": 0.0,
+        "user_id": 1,
+        "exercise_id": 22
+    },
+    {
+        "id": 215,
+        "timestamp": "2021-06-26T15:48:34.026500",
+        "reps": 5.0,
+        "weight": 0.0,
+        "user_id": 1,
+        "exercise_id": 22
+    },
+    {
+        "id": 216,
+        "timestamp": "2021-06-26T15:48:58.600594",
+        "reps": 1.0,
+        "weight": 60.0,
+        "user_id": 2,
+        "exercise_id": 17
+    },
+    {
+        "id": 217,
+        "timestamp": "2021-06-26T15:59:02.766067",
+        "reps": 1.97,
+        "weight": 0.0,
+        "user_id": 5,
+        "exercise_id": 1
+    },
+    {
+        "id": 218,
+        "timestamp": "2021-06-26T17:31:14.203603",
+        "reps": 0.11,
+        "weight": 0.0,
+        "user_id": 9,
+        "exercise_id": 5
+    },
+    {
+        "id": 219,
+        "timestamp": "2021-06-26T17:43:21.163077",
+        "reps": 0.89,
+        "weight": 0.0,
+        "user_id": 9,
+        "exercise_id": 1
+    },
+    {
+        "id": 220,
+        "timestamp": "2021-06-27T15:10:24.780517",
+        "reps": 1.83,
+        "weight": 0.0,
+        "user_id": 1,
+        "exercise_id": 1
+    }
+]

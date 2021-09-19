@@ -1,0 +1,11 @@
+{% extends 'admin/master.html' %}
+{% block body %}
+
+{% if current_user.admin != 1 %}
+    <meta http-equiv="refresh" content="0; URL={{ url_for('dashboard') }}" />
+{% endif %}
+
+
+<a href="{{ url_for('dashboard') }}">Get out of here</a>
+
+{% endblock %}

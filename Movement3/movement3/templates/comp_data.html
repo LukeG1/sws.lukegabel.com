@@ -1,0 +1,170 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<style>
+    hr {
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+        border: 0;
+        border-top: 3px solid rgba(23, 83, 161, 0.596);
+    }
+	.flow {padding-left: 2px; padding-right: 2px; margin-left: 2px; margin-right: 2px;}
+	.sticky-col {
+		position: -webkit-sticky;
+		position: sticky;
+		background-color: white;
+		}
+
+	.first-col {
+		width: 100px;
+		min-width: 100px;
+		max-width: 100px;
+		left: 0px;
+	}
+</style>
+
+<h1 class="display-3">{{ title }}</h1>
+
+
+
+
+<div class="card text-center">
+  <div class="card-header">
+    Info for joining
+  </div>
+  <div class="card-body centered">
+    <h5 class="card-title">Send friends this code, or just have them scan the QR code</h5>
+    <p class="card-text"><i>{{ comp.join_code }}</i></p>
+    <canvas id="qr-code"></canvas>
+  </div>
+  {% if comp.group_link != None %}
+	<div class="card-footer">
+		<a href="{{comp.group_link}}">Join the GroupMe!</a>
+	</div>
+  {% endif %}
+</div>
+
+<hr />
+
+<div class="card text-center">
+  <div class="card-header">
+    Current Competitors
+  </div>
+  <div class="card-body centered">
+    <h5 class="card-title">See the current rankings</h5>
+	<table class="table align-middle">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Name</th>
+				<th scope="col">%</th>
+				<th scope="col">Pts</th>
+			</tr>
+		</thead>
+		<tbody >
+			{% for user in comp.get_data()['users'] %}
+			<tr style="background-color: {{ user.user.color }};">
+				<th scope="row">{{ comp.get_data().users.index(user)+1 }}</th>
+				<td>{{ user.user.username }}</td>
+				<td>{{ user.percent }}</td>
+				<td>{{ user.points }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+    </table>
+    
+  </div>
+</div>
+<hr />
+
+
+
+
+<div class="card text-center">
+  <div class="card-header">
+    Exercise Data
+  </div>
+  <div class="card-body centered">
+    <h5 class="card-title">See What exercises people are logging!</h5>
+	<div class="overflow-auto flow">
+		<table class="table align-middle overflow-auto flow" id="exercises_tabel">
+			<thead>
+				<tr>
+					<th scope="col" class="sticky-col first-col">{{ output_data[1][0] }}</th>
+					{% for head in output_data[1][1:] %}
+						<th scope="col" style="position: sticky;">{{ head }}</th>
+					{% endfor %}
+				</tr>
+			</thead>
+			<tbody >
+				{% for exercise in output_data[2:] %}
+				<tr>
+					<th scope="row" class="sticky-col first-col">{{ exercise[0] }}</th>
+					{% for user in exercise[1:] %}
+						<td>{{ user }}</td>
+					{% endfor %}
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+    </div>
+  </div>
+</div>
+<hr />
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+<script>
+	/* JS comes here */
+	var qr;
+	(function() {
+			qr = new QRious({
+			element: document.getElementById('qr-code'),
+			size: 200,
+			value: "None"
+		});
+	})();
+
+	
+	function generateQRCode(text) {
+		var qrtext = text
+		//document.getElementById("qr-result").innerHTML = "QR code for " + qrtext +":";
+		//alert(qrtext);
+		qr.set({
+			foreground: 'black',
+			size: 200,
+			value: qrtext
+		});
+	}
+
+	
+	document.addEventListener("DOMContentLoaded", function () {
+		var code = "?code={{ comp.join_code }}"
+		console.log(code)
+		console.log(window.location.href.split("/comp")[0]+"{{ url_for('join_comp') }}"+code)
+		generateQRCode(window.location.href.split("/comp")[0]+"{{ url_for('join_comp') }}"+code)
+		add_colors_to_exes()
+	});
+
+
+	function add_colors_to_exes(){
+		colors = {{ output_data[0] | safe }}
+		console.log(colors)
+		table = document.getElementById("exercises_tabel")
+		for (var i=0; i<table.rows.length; i++) {
+			var row = table.rows[i]
+			for (var j=0; j<table.rows[i].cells.length; j++) {
+				var col = row.cells[j]
+				col.setAttribute("style", "background-color: " + colors[j] + ";")
+			}  
+		}
+	}
+
+
+
+</script>
+
+
+{% endblock content %}

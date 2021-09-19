@@ -1,0 +1,153 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1 class="display-4" id="page-title">Dashboard</h1>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
+
+
+
+<style>
+    hr {
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+        border: 0;
+        border-top: 3px solid rgba(23, 83, 161, 0.596);
+    }
+    .orb {
+        font-family: 'Orbitron';
+    }
+</style>
+
+{% for comp_data in all_comp_data %}
+<div class="card text-center">
+    <div class="card-header row">
+        <div class="col">
+            {{ (comp_data.comp.start|string).split(" ")[0] }}
+            <!-- {{ comp_data.comp.time_ago() }} -->
+        </div>
+        <!-- <div class="col"></div> -->
+        <div class="col">
+            {{ comp_data.comp.goal }}
+        </div>
+    </div>
+    <div class="card-body">
+        <a  href="{{ url_for('comp_page',join_code=comp_data.comp.join_code) }}" style="color:black;">
+            <h2 class="card-title-lg orb">
+                {{ comp_data.comp.name }}
+            </h2>
+        </a>
+        
+        {% if comp_data.latest != None %}
+            <!-- <p class="card-text">Last exercise logged by <b>{{ User.query.get(comp_data.latest.user_id).username }}</b> {{ comp_data.latest.time_ago() }}</p> -->
+            <small class="text-muted">
+                Last exercise logged by 
+                <cite title="Source Title">{{ User.query.get(comp_data.latest.user_id).username }}</cite>
+                {{ comp_data.latest.time_ago() }}
+            </small>
+        {% endif %}
+
+        <div class="row align-middle">
+            <div class="col align-middle">
+                <table class="table align-middle">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">%</th>
+                            <th scope="col">Pts</th>
+                        </tr>
+                    </thead>
+                    <tbody id="{{ (comp_data.comp.id|string).replace(" ","_") }}_body">
+                        {% for user in comp_data.users %}
+                        <tr style="background-color: {{ user.user.color }};">
+                            <th scope="row">{{ comp_data.users.index(user)+1 }}</th>
+                            <td>{{ user.user.username }}</td>
+                            <td>{{ user.percent }}</td>
+                            <td>{{ user.points }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6">
+                <table class="table align-middle">
+                    <thead>
+                        <tr>
+                            <th scope="col">Current Percentages</th>
+                        </tr>
+                    </thead>
+                </table>
+                
+                <div id="{{ (comp_data.comp.id|string).replace(" ","_") }}_chart_div"></div>
+                
+            </div>
+        </div>
+        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+    </div>
+    <div class="card-footer text-muted">
+        <a href="#" onclick="toggle_show_{{ (comp_data.comp.id|string).replace(" ","_") }}()">Show more...</a>
+    </div>
+</div>
+<hr />
+{% endfor %}
+
+<script>
+    max_display = 5
+    hidden = true
+
+    //document.location.reload(true)
+    google.charts.load('current', { packages: ['corechart', 'bar'] });
+    
+
+    {% for comp_data in all_comp_data %}
+
+        google.charts.setOnLoadCallback(drawSeries_{{ (comp_data.comp.id|string).replace(" ","_") }});
+
+        function drawSeries_{{ (comp_data.comp.id|string).replace(" ","_") }}() {
+            var data = google.visualization.arrayToDataTable([
+            ['User', 'percent', { role: 'style' }, { role: 'annotation' }], 
+            {% for user in comp_data.users %}
+                ['',{{ user.percent.replace("%","") }},'{{ user.user.color }}','{{ user.user.username }}'],
+            {% endfor %}
+        ]);
+            var options = {
+                chartArea: {width: '100%', height: '100%'},
+                legend: { position: "none" },
+                hAxis: { viewWindowMode: 'maximized', maxValue:100, ticks: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100] },
+                vAxis: { format: 'none' },
+                theme: 'maximized'
+            };
+
+            var chart = new google.visualization.BarChart(document.getElementById('{{ (comp_data.comp.id|string).replace(" ","_") }}_chart_div'));
+            chart.draw(data, options);
+        }
+        window.addEventListener('resize', drawSeries_{{ (comp_data.comp.id|string).replace(" ","_") }});
+    {% endfor %}
+
+
+    function hide_extras(){
+        {% for comp_data in all_comp_data %}
+            table = document.getElementById("{{ (comp_data.comp.id|string).replace(" ","_") }}_body")
+            for(var i=0; i<table.children.length; i++){
+                if(i+1>max_display){
+                    table.children[i].style.display = "none"
+                }
+            }
+        {% endfor %}
+    }
+    {% for comp_data in all_comp_data %}
+        function toggle_show_{{ (comp_data.comp.id|string).replace(" ","_") }}(){
+            table = document.getElementById("{{ (comp_data.comp.id|string).replace(" ","_") }}_body")
+            for(var i=0; i<table.children.length; i++){
+                table.children[i].style.display = ""
+            }
+        }
+    {% endfor %}
+
+    document.addEventListener("DOMContentLoaded", function () {
+        //reset_hidden()
+        hide_extras()
+    });
+</script>
+
+{% endblock content %}

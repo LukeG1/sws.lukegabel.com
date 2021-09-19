@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+<style>
+
+/*
+
+.card {
+    margin: 0 auto; 
+    float: none;
+    margin-bottom: 10px; 
+    vertical-align: center;
+    margin: auto !important;
+}
+
+*/
+
+
+</style>
+
+
+<div style="padding-top: 20vh; margin: auto;">
+
+
+    <div class="card text-center" style="width: fit-content; margin: auto;">
+    <div class="card-header">
+        View User
+    </div>
+    <div class="card-body" style="background-color: {{ user.color }}">
+        <h5 class="card-title">{{ user.username }}</h5>
+        <p class="card-text">Lorem ipsum dolor sit amet</p>
+        <a href="#" class="btn btn-primary">+ Friend</a>
+    </div>
+    </div>
+
+</div>
+
+
+{% endblock content %}

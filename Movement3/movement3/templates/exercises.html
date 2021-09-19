@@ -1,0 +1,227 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1 class="display-4">Exercises</h1>
+
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    Launch demo modal
+  </button> -->
+
+<!-- Modal -->
+<style>
+    hr {
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+        border: 0;
+        border-top: 3px solid rgba(23, 83, 161, 0.596);
+    }
+
+    .form-space {
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+    }
+</style>
+
+
+<button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#exampleModalLong">
+    + New Exercise
+</button>
+<form method="POST" action="">
+    {{ form.hidden_tag() }}
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Add an exercise</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Fill in all of this data well or your exercise request will most likely be rejected.
+                        If you are adding an exercise with a modifier use M (Modifier) as the X value.
+                        Use more parentheses then you think you need.
+                        Type the equation as if you were typing into wolfram alpha.
+                        Unweighted exercise values are just a number.
+                    </p>
+                    <hr />
+                    <!-- <input class="form-control form-control-lg form-space" placeholder="Name..."type="text"> -->
+                    <div>
+                        <!--{{ form.name(class="form-control form-control-lg form-space", placeholder="Name...") }}-->
+
+
+                        {% if form.name.errors %}
+                            {{ form.name(class="form-control form-control-lg form-space is-invalid", placeholder="Name...") }}
+                            <div class="invalid-feedback fadeIn second">
+                                {% for error in form.name.errors %}
+                                    <p class="fadeIn second">{{ error }}</p>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.name(class="form-control form-control-lg form-space", placeholder="Name...") }}
+                        {% endif %}
+
+
+                    </div>
+                    <!-- <textarea class="form-control" id="exampleFormControlTextarea1 form-space" rows="3" placeholder="Description..."></textarea> -->
+                    <div>
+
+                        {% if form.description.errors %}
+                            {{ form.description(class="form-control is-invalid", placeholder="Description...", rows="3") }}
+                            <div class="invalid-feedback fadeIn second">
+                                {% for error in form.name.errors %}
+                                    <p class="fadeIn second">{{ error }}</p>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.description(class="form-control", placeholder="Description...", rows="3") }}
+                        {% endif %}
+
+                    </div>
+                    <!-- <input class="form-control form-control-lg form-space" placeholder="Value... EX: 4 or (W)^4" type="text"> -->
+                    <div>
+                        {{ form.value(class="form-control form-control-lg form-space", placeholder="Value... EX: 4 or
+                        (M)^4") }}
+                    </div>
+                    <!-- <input class="form-control form-control-lg form-space" placeholder="Link..." type="text"> -->
+                    <div>
+
+
+                        {% if form.link.errors %}
+                            {{ form.link(class="form-control form-control-lg form-space is-invalid", placeholder="Youtube Link...") }}
+                            <div class="invalid-feedback fadeIn second">
+                                {% for error in form.link.errors %}
+                                    <p class="fadeIn second">{{ error }}</p>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.link(class="form-control form-control-lg form-space", placeholder="Youtube Link...") }}
+                        {% endif %}
+                    </div>
+                    <!-- <select class="form-control form-space" id="exampleFormControlSelect1">
+                    <option>Unit...</option>
+                    <option>reps</option>
+                    <option>minutes</option>
+                    <option>seconds</option>
+                    <option>calories</option>
+                    <option>miles</option>
+                </select> -->
+                    <div>
+                        {{ form.unit(class="form-control form-space") }}
+                    </div>
+                    <!-- <select class="form-control form-space" id="exampleFormControlSelect1">                                                                                                                         
+                    <option value="" disabled selected>Category...</option>
+                    <option>Aerobic</option>
+                    <option>Anerobic</option>
+                    <option>Sports</option>
+                    <option>Warm Up</option>
+                </select> -->
+                    <div>
+                        {{ form.category(class="form-control form-space") }}
+                    </div>
+                    <!-- <div class="form-check form-switch form-space">
+                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Weighted?</label>
+                </div> -->
+                    <div>
+                        {{ form.weighted(class="") }}
+                        {{ form.weighted.label(class="") }}
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <!-- <button type="button" class="btn btn-primary">Sublit your request!</button> -->
+                    {{ form.submit(class="btn btn-primary") }}
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<hr />
+
+<div>
+    <div class="row mb-2">
+        {% for exercise in Exercise.query.all() %}
+        <div class="col-sm-4">
+            {% if exercise.public == 1 %}
+                <div class="card flex-md-row mb-4 box-shadow h-md-250 shadow">
+                    <div class="card-body d-flex flex-column align-items-start">
+                        <strong class="d-inline-block mb-2 text-primary">{{ exercise.category }}</strong>
+                        <h3 class="mb-0">
+                            {% if current_user.admin == 1 %}
+                                <a href="/exercises/{{ exercise.id }}"><p class="text-dark">{{ exercise.name }}</p></a>
+                            {% else %}
+                                <p class="text-dark">{{ exercise.name }}</p>
+                            {% endif %}
+                        </h3>
+                        <div class="mb-1 text-muted">{{ exercise.pointvalue.replace("**","^") }} points per {{ exercise.unit
+                            }}</div>
+                        <p class="card-text mb-auto">{{ exercise.description }}</p>
+                        <a href="{{ exercise.link }}" target="_blank">See a source</a>
+                    </div>
+                    <!-- PUT AN EMBEDED VID HERE? -->
+                </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+        <!-- <div class="col-sm-4">
+      <div class="card flex-md-row mb-4 box-shadow h-md-250">
+        <div class="card-body d-flex flex-column align-items-start">
+          <strong class="d-inline-block mb-2 text-success">Design</strong>
+          <h3 class="mb-0">
+            <a class="text-dark" href="#">Post title</a>
+          </h3>
+          <div class="mb-1 text-muted">Nov 11</div>
+          <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+          <a href="#">Continue reading</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+        <div class="card flex-md-row mb-4 box-shadow h-md-250">
+          <div class="card-body d-flex flex-column align-items-start">
+            <strong class="d-inline-block mb-2 text-success">Design</strong>
+            <h3 class="mb-0">
+              <a class="text-dark" href="#">Post title</a>
+            </h3>
+            <div class="mb-1 text-muted">Nov 11</div>
+            <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+            <a href="#">Continue reading</a>
+          </div>
+        </div>
+      </div> -->
+
+    </div>
+</div>
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+        select1 = document.getElementById("unit")
+        new_option = document.createElement("option")
+        new_option.text = "Unit..."
+        new_option.disabled = true
+        new_option.selected = true
+        new_option.value = null
+        select1.insertBefore(new_option, select1.children[0])
+
+        select2 = document.getElementById("category")
+        new_option = document.createElement("option")
+        new_option.text = "Category..."
+        new_option.disabled = true
+        new_option.selected = true
+        new_option.value = null
+        select2.insertBefore(new_option, select2.children[0])
+
+
+
+    });
+
+</script>
+{% endblock content %}

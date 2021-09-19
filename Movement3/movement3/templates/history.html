@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1 class="display-4">Your History</h1>
+
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    Launch demo modal
+  </button> -->
+
+<!-- Modal -->
+
+<style>
+    hr {
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+        border: 0;
+        border-top: 3px solid rgba(23, 83, 161, 0.596);
+    }
+    .close_ex{
+        color: #ff0000;
+    }
+</style>
+<!-- <ul class="list-group">
+    {% for np in current_user.point_nodes|reverse %}
+    
+        <li class="list-group-item">{{ np.timestamp }} | {{ Exercise.query.get(np.exercise_id).name }} | {{ np.reps }}</li>    
+
+    {% endfor %}
+</ul> -->
+
+<div class="row">
+    <div class="list-group col">
+        {% for np in current_user.point_nodes|reverse %}
+            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start"><!-- list-group-item-action -->
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{ Exercise.query.get(np.exercise_id).name }}</h5>
+                <div>
+                    <form action="{{ url_for('remove_point_node',pn_id=np.id) }}">
+                        <button type="submit" class="close close_ex" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </form>
+                    <small class="text-muted">{{ np.time_ago() }}</small>
+                </div>
+            </div>
+            <p class="mb-1">{{ np.reps }} {{ Exercise.query.get(np.exercise_id).unit }}</p>
+            <small class="text-muted">{{ np.points() }} points</small>
+            </a>
+        {% endfor %}
+    </div>
+    <div class="col-md-6"></div>
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,138 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1 class="display-4">Friends</h1>
+
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    Launch demo modal
+  </button> -->
+
+<!-- Modal -->
+
+<style>
+    hr {
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+        border: 0;
+        border-top: 3px solid rgba(23, 83, 161, 0.596);
+    }
+    .close_ex{
+        color: #ff0000;
+    }
+</style>
+
+<form method="POST" action="">
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Select your exercise!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+
+                    <div>
+                        <input class="form-control form-control-lg wider glass-icon" placeholder="🔍 Search..."
+                            type="text" id="search_bar" oninput="update_search()">
+                    </div>
+                    <hr />
+                    <ul class="list-group" style="height: 40vh; overflow: scroll;" id="search_results">
+                        <!-- <li class="list-group-item" id="search-item-1">Cras justo odio</li> -->
+                    </ul>
+                    <hr />
+                   
+
+
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-secondary" href="{{ url_for('dashboard') }}">Close</a>
+                    <!-- <button type="button" class="btn btn-primary">Log!</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+<script>
+
+    exercises = {{ people | safe }};
+    document.addEventListener("DOMContentLoaded", function () {
+        $('#exampleModalCenter').modal('show')
+        
+    for (var i = 0; i < exercises.length; i++) {
+
+        console.log(exercises[i][2])
+        if(exercises[i][2] != {{ current_user.id | safe }}){
+            var inner_string = exercises[i][1]
+            if(inner_string == false){
+                inner_string = "<form method=\"get\" action=\"/add_friend/"+exercises[i][2]+"\"><button type=\"submit\" class=\"btn btn-success\">+ Friend!</button></form>"
+            }else{
+                inner_string = "<form method=\"get\" action=\"/remove_friend/"+exercises[i][2]+"\"><button type=\"submit\" class=\"btn btn-danger\">- Friend!</button></form>"
+            }
+            inner_string = "<div class=\"row\"><div class=\"col\">"+exercises[i][0]+"</div><div class=\"col col-md-4 offset-md-4\" style = \"float: right;\">"+inner_string+"</div></div>"
+
+            options = document.getElementById("search_results");
+            new_option = document.createElement("li");
+            new_option.innerHTML = inner_string;
+            new_option.classList.add("list-group-item");
+            new_option.classList.add("list-group-item-action");
+            new_option.setAttribute('id',String(i));
+            new_option.setAttribute('onclick',"do_this("+String(new_option.id)+")");
+            options.appendChild(new_option)
+        }
+    }
+        
+
+    });
+    function do_this(id){
+        emd = {{ exercise_metadata | safe }}
+
+        reps = document.getElementById("reps");
+        reps.placeholder = emd[id][1]+"..."
+
+        weight = document.getElementById("weight");
+        if(emd[id][0] == 1){
+            weight.style.display = "block"
+        }else{
+            weight.style.display = "none"
+        }
+
+        selection = document.getElementById("ex_selection");
+        selection.style.display = "block"
+        selection.value = exercises[id];
+    }
+
+
+    function update_search() {
+        options = document.getElementById("search_results")
+        value = document.getElementById("search_bar").value.toLowerCase();
+        if (value == "") {
+            for (var i = 0; i < options.children.length; i++) {
+                options.children[i].style.display = "block"
+            }
+        } else {
+            //console.log(options.children)
+            for (var i = 0; i < options.children.length; i++) {
+                options.children[i].style.display = "none"
+            }
+            for (var i = 0; i < options.children.length; i++) {
+                if (options.children[i].innerHTML.toLowerCase().includes(value)) {
+                    options.children[i].style.display = "block"
+                }
+            }
+        }
+    }
+
+</script>
+{% endblock content %}
+
+
+
+
+
+

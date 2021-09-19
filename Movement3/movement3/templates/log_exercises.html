@@ -1,0 +1,291 @@
+
+{% extends "layout.html" %}
+{% block content %}
+<h1 class="display-4">Log Exercises</h1>
+
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    Launch demo modal
+  </button> -->
+
+<!-- Modal -->
+
+<style>
+    hr {
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+        border: 0;
+        border-top: 3px solid rgba(23, 83, 161, 0.596);
+    }
+    .close_ex{
+        color: #ff0000;
+    }
+    .lds-roller {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    }
+    .lds-roller div {
+    animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    transform-origin: 40px 40px;
+    }
+    .lds-roller div:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #007bff;
+    margin: -4px 0 0 -4px;
+    }
+    .lds-roller div:nth-child(1) {
+    animation-delay: -0.036s;
+    }
+    .lds-roller div:nth-child(1):after {
+    top: 63px;
+    left: 63px;
+    }
+    .lds-roller div:nth-child(2) {
+    animation-delay: -0.072s;
+    }
+    .lds-roller div:nth-child(2):after {
+    top: 68px;
+    left: 56px;
+    }
+    .lds-roller div:nth-child(3) {
+    animation-delay: -0.108s;
+    }
+    .lds-roller div:nth-child(3):after {
+    top: 71px;
+    left: 48px;
+    }
+    .lds-roller div:nth-child(4) {
+    animation-delay: -0.144s;
+    }
+    .lds-roller div:nth-child(4):after {
+    top: 72px;
+    left: 40px;
+    }
+    .lds-roller div:nth-child(5) {
+    animation-delay: -0.18s;
+    }
+    .lds-roller div:nth-child(5):after {
+    top: 71px;
+    left: 32px;
+    }
+    .lds-roller div:nth-child(6) {
+    animation-delay: -0.216s;
+    }
+    .lds-roller div:nth-child(6):after {
+    top: 68px;
+    left: 24px;
+    }
+    .lds-roller div:nth-child(7) {
+    animation-delay: -0.252s;
+    }
+    .lds-roller div:nth-child(7):after {
+    top: 63px;
+    left: 17px;
+    }
+    .lds-roller div:nth-child(8) {
+    animation-delay: -0.288s;
+    }
+    .lds-roller div:nth-child(8):after {
+    top: 56px;
+    left: 12px;
+    }
+    @keyframes lds-roller {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    }
+
+</style>
+
+
+
+<form method="POST" action="" onsubmit="do_loading()">
+    {{ form.hidden_tag() }}
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Select your exercise!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                
+
+                <div  class="modal-body text-center">
+
+                    <!--<img src="{{ url_for('static', filename='loading.gif') }}" alt="loading..." id="loading" style="display:none;"  />-->
+                    <!--<img src="http://i.stack.imgur.com/SBv4T.gif" alt="loading..." id="loading" style="display:none;" width="250" />-->
+                    
+
+                    <div class="lds-roller" id="loading" style="display:none;"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                    
+                    
+                    
+                    <div id="pop_body">
+                        
+                        <div>
+                            <input class="form-control form-control-lg wider glass-icon" placeholder="🔍 Search..."
+                                type="text" id="search_bar" oninput="update_search()">
+                        </div>
+                        <hr />
+                        <ul class="list-group text-left" style="height: 40vh; overflow: scroll;" id="search_results">
+                            <!-- <li class="list-group-item" id="search-item-1">Cras justo odio</li> -->
+                        </ul>
+                        <hr />
+                        {{ form.selection(id="ex_selection", class="form-control form-control-lg wider col", placeholder="Select from above", readonly="", style="display: none;") }}
+                        
+                        
+
+                            {{ form.exercise(class="form-control form-space", style="display: none;") }}
+                            
+                            {% if form.reps.errors %}
+                                <div class="row is-invalid" style="padding-left: 15px; padding-right: 15px; padding-top: 15px;">
+                                    {{ form.reps(id="reps", class="form-control form-control-lg wider col", placeholder="Reps...") }}
+                                    {{ form.weight(id="weight", class="form-control form-control-lg wider col", placeholder="Modifier...", style="display: none;") }}
+                                </div>
+                                <div class="invalid-feedback">
+                                    {% for error in form.reps.errors %}
+                                        <p>{{ error }}</p>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                <div class="row" style="padding-left: 15px; padding-right: 15px; padding-top: 15px;">
+                                    {{ form.reps(id="reps", class="form-control form-control-lg wider col", placeholder="Reps...") }}
+                                    {{ form.weight(id="weight", class="form-control form-control-lg wider col", placeholder="Modifier...", style="display: none;") }}
+                                </div>
+                            {% endif %}
+
+                        
+                </div>
+
+
+                </div>
+                <div class="modal-footer" id="pop_foot">
+                    <a class="btn btn-secondary" data-dismiss="modal">Close</a>
+                    <!-- <button type="button" class="btn btn-primary">Log!</button> -->
+                    {{ form.submit_more(class="btn btn-primary") }}
+                    {{ form.submit(class="btn btn-primary") }}
+                </div>
+                
+
+            </div>
+        </div>
+    </div>
+</form>
+
+<!-- <ul class="list-group">
+    {% for np in current_user.point_nodes|reverse %}
+    
+        <li class="list-group-item">{{ np.timestamp }} | {{ Exercise.query.get(np.exercise_id).name }} | {{ np.reps }}</li>    
+
+    {% endfor %}
+</ul> -->
+
+<div class="row">
+    <div class="list-group col">
+        {% for np in current_user.point_nodes|reverse %}
+            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start"><!-- list-group-item-action -->
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{ Exercise.query.get(np.exercise_id).name }}</h5>
+                <div>
+                    <form action="{{ url_for('remove_point_node',pn_id=np.id) }}">
+                        <button type="submit" class="close close_ex" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </form>
+                    <small class="text-muted">{{ np.time_ago() }}</small>
+                </div>
+            </div>
+            <p class="mb-1">{{ np.reps }} {{ Exercise.query.get(np.exercise_id).unit }}</p>
+            <small class="text-muted">{{ np.points() }} points</small>
+            </a>
+        {% endfor %}
+    </div>
+    <div class="col-md-6"></div>
+</div>
+
+
+<script>
+
+
+    function do_loading(){
+        style="display:none;"
+        dom1 = document.getElementById("pop_body")
+        dom2 = document.getElementById("pop_foot")
+        dom3 = document.getElementById("loading")
+        dom1.style.display = "none"
+        dom2.style.display = "none"
+        dom3.style.display = ""
+    }
+
+
+    exercises = {{ form.exercise.choices | safe }};
+    document.addEventListener("DOMContentLoaded", function () {
+        $('#exampleModalCenter').modal('show')
+        
+    for (var i = 0; i < exercises.length; i++) {
+        options = document.getElementById("search_results");
+        new_option = document.createElement("li");
+        new_option.innerHTML = exercises[i];
+        new_option.classList.add("list-group-item");
+        new_option.classList.add("list-group-item-action");
+        new_option.setAttribute('id',String(i));
+        new_option.setAttribute('onclick',"do_this("+String(new_option.id)+")");
+        options.appendChild(new_option)
+    }
+        
+
+    });
+    function do_this(id){
+        emd = {{ exercise_metadata | safe }}
+
+        reps = document.getElementById("reps");
+        reps.placeholder = emd[id][1]+"..."
+
+        weight = document.getElementById("weight");
+        if(emd[id][0] == 1){
+            weight.style.display = "block"
+        }else{
+            weight.style.display = "none"
+        }
+
+        selection = document.getElementById("ex_selection");
+        selection.style.display = "block"
+        selection.value = exercises[id];
+    }
+
+
+    function update_search() {
+        options = document.getElementById("search_results")
+        value = document.getElementById("search_bar").value.toLowerCase();
+        if (value == "") {
+            for (var i = 0; i < options.children.length; i++) {
+                options.children[i].style.display = "block"
+            }
+        } else {
+            //console.log(options.children)
+            for (var i = 0; i < options.children.length; i++) {
+                options.children[i].style.display = "none"
+            }
+            for (var i = 0; i < options.children.length; i++) {
+                if (options.children[i].innerHTML.toLowerCase().includes(value)) {
+                    options.children[i].style.display = "block"
+                }
+            }
+        }
+    }
+
+</script>
+{% endblock content %}

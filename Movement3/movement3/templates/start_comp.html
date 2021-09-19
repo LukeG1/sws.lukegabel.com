@@ -1,0 +1,235 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1 class="display-4">Start Comp</h1>
+
+
+<style>
+    hr {
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+        border: 0;
+        border-top: 3px solid rgba(23, 83, 161, 0.596);
+    }
+</style>
+
+
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    Launch demo modal
+</button> -->
+
+<!-- Modal -->
+<form method="POST" action="">
+    {{ form.hidden_tag() }}
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Start a new comp!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <hr />
+                    <p class="text-center">Who should be in this comp?</p>
+                    <!--{{ form.users(class="form-control form-control-lg form-space", style="height: 20vh; overflow: scroll;") }}-->
+
+
+                     {% if form.users.errors %}
+                            {{ form.users(class="form-control form-control-lg form-space is-invalid", style="height: 20vh; overflow: scroll;") }}
+                            <div class="invalid-feedback fadeIn second">
+                                {% for error in form.users.errors %}
+                                    <p class="fadeIn second">{{ error }}</p>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.users(class="form-control form-control-lg form-space", style="height: 20vh; overflow: scroll;") }}
+                        {% endif %}
+
+
+                    <hr />
+                    <p class="text-center">What exercises should be in this comp?</p>
+                    {{ form.exercises(class="form-control form-control-lg form-space", style="height: 20vh; overflow: scroll;") }}
+                    <hr />
+                    <!-- <input class="form-control form-control-lg form-space" placeholder="Comp name..." type="text"> -->
+                    {% if form.name.errors %}
+                            {{ form.name(class="form-control form-control-lg form-space is-invalid", placeholder="Name...") }}
+                            <div class="invalid-feedback fadeIn second">
+                                {% for error in form.name.errors %}
+                                    <p class="fadeIn second">{{ error }}</p>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.name(class="form-control form-control-lg form-space", placeholder="Name...") }}
+                        {% endif %}
+                    {{ form.goal(class="form-control form-control-lg form-space", placeholder="Goal...") }}
+                    <hr />
+                    <p>
+                        If you have a groupme you would like to use for competition notifications, go to that groups settings,
+                        turn on group sharing, copy the link and paste it here.
+                    </p>
+
+                    {% if form.group_link.errors %}
+                            {{ form.group_link(class="form-control form-control-lg form-space is-invalid", placeholder="GroupMe Link...") }}
+                            <div class="invalid-feedback fadeIn second">
+                                {% for error in form.group_link.errors %}
+                                    <p class="fadeIn second">{{ error }}</p>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.group_link(class="form-control form-control-lg form-space", placeholder="GroupMe Link...") }}
+                        {% endif %}
+                    <hr />
+                    <p class="text-center">Options</p>
+                    
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">                  
+                                {{ form.repeating(class="fadeIn third", placeholder="password", onclick="show_hide_repeat()") }}
+                                {{ form.repeating.label(class="fadeIn third") }}
+                            </div>
+                            <div class="col">
+                                {{ form.accept_new(class="fadeIn third", placeholder="password") }}
+                                {{ form.accept_new.label(class="fadeIn third") }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            {% if current_user.admin == 1 %}
+                                <div class="col">                  
+                                    {{ form.global_comp(class="fadeIn third", placeholder="password") }}
+                                    {{ form.global_comp.label(class="fadeIn third") }}
+                                </div>
+                            {% else %}
+                                <div class="col">
+                                </div>
+                            {% endif %}
+                            <div class="col">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <hr />
+
+                    <div id="repeating_settings" style="display: none;">
+                        <p class="text-center">Repeating comp settings</p>
+                        <p class="text-center">
+                            Repeating comps will have a number appended to the end of 
+                            the title so please account for that in the naming process.
+                            The bonus time is how long other competetitors will have to
+                            log points after someone hits 100%. the break days is how many
+                            full days off you will have between comps. The minimum bonus
+                            time is 1 minute and the maximum is 1 hour. The minimum
+                            days off is 1 and the maximum is 7.
+                        </p>
+                        {{ form.bonus_time(class="form-control form-control-lg form-space", placeholder="Bonus Time (mins)...", value="0", type="number") }}
+                        {{ form.days_off(class="form-control form-control-lg form-space", placeholder="Days Off (days)...", value="0", type="number") }}
+                    </div>
+                    
+                    
+
+
+
+                    
+                    <!-- <label class="col-form-label">Choose a start end date and time:</label>
+                    <input type="datetime-local"> -->
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    {{ form.submit(class="btn btn-primary") }}
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        $('#exampleModalCenter').modal('show')
+    });
+
+
+    function show_hide_repeat(){
+        stuff = document.getElementById("repeating_settings")
+        if(stuff.style.display == "block"){
+            //stuff.style.display == "none"
+            stuff.setAttribute('style', "display: none;");
+            for(var i=2; i<stuff.children.length; i++){
+                stuff.children[i].value = 0
+            }
+
+        }else{
+            //stuff.style.display = "block"
+            stuff.setAttribute('style', "display: block;");
+            for(var i=2; i<stuff.children.length; i++){
+                stuff.children[i].value = null
+            }
+        }
+    }
+
+</script>
+
+{% endblock content %}
+
+
+
+
+<!-- <label class="col-form-label">Select the participants:</label>
+<ul class="list-group" style="height: 20vh; overflow: scroll;" id="search_results">
+    <li class="list-group-item" id="search-item-1">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <b>Select All</b>
+    </li>
+    <li class="list-group-item" id="search-item-1">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        Cras justo odio
+    </li>
+    <li class="list-group-item" id="search-item-1">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        Cras justo odio
+    </li>
+    <li class="list-group-item" id="search-item-1">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        Cras justo odio
+    </li>
+    <li class="list-group-item" id="search-item-1">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        Cras justo odio
+    </li>
+    <li class="list-group-item" id="search-item-1">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        Cras justo odio
+    </li>
+</ul>
+<label class="col-form-label">Select the exercises:</label>
+<ul class="list-group" style="height: 20vh; overflow: scroll;" id="search_results">
+    <li class="list-group-item" id="search-item-1">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <b>Select All</b>
+    </li>
+    <li class="list-group-item" id="search-item-1">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        Cras justo odio
+    </li>
+    <li class="list-group-item" id="search-item-1">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        Cras justo odio
+    </li>
+    <li class="list-group-item" id="search-item-1">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        Cras justo odio
+    </li>
+    <li class="list-group-item" id="search-item-1">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        Cras justo odio
+    </li>
+    <li class="list-group-item" id="search-item-1">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        Cras justo odio
+    </li>
+</ul> -->

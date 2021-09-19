@@ -1,0 +1,155 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1 class="display-4">Stats</h1>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
+
+<style>
+    hr {
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+        border: 0;
+        border-top: 3px solid rgba(23, 83, 161, 0.596);
+    }
+    .orb {
+        font-family: 'Orbitron';
+    }
+    .flow {padding-left: 2px; padding-right: 2px; margin-left: 2px; margin-right: 2px;}
+    
+
+</style>
+
+{% for comp_data in all_comp_data %}
+<div class="card text-center overflow-auto flow">
+    <div class="card-header row">
+        <div class="col">
+            {{ (comp_data.comp.start|string).split(" ")[0] }}
+            <!-- {{ comp_data.comp.time_ago() }} -->
+        </div>
+        <!-- <div class="col"></div> -->
+        <div class="col">
+            {{ comp_data.comp.goal }}
+        </div>
+    </div>
+    <div class="card-body flow">
+        <a  href="{{ url_for('comp_page',join_code=comp_data.comp.join_code) }}" style="color:black;">
+            <h2 class="card-title-lg orb">
+                {{ sbs(comp_data.comp.name)[0]  }}
+            </h2>
+        </a>
+        
+        <div class="overflow-auto flow">
+        <div class="row align-middle overflow-auto flow">
+            <div class="col align-middle overflow-auto flow">
+                <table class="table align-middle overflow-auto" id="table-{{ comp_data.comp.id }}">
+                    <thead>
+                        <tr>
+                            {% for h in comp_data.data[0] %}
+                                <th scope="col">{{ h }}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in comp_data.data[1:] %}
+                            <tr>
+                                <td id="col1">{{ user[1] }}</td>
+                                {% for data in user[2:] %}
+                                    {% if(data == user[0].username) %}
+                                        <td style="background-color: {{ user[0].color }};">{{ data }}</td>
+                                    {% else %}
+                                        <td>{{ data }}</td>
+                                    {% endif %}
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer text-muted">
+        <a href="#">Show more...</a>
+    </div>
+</div>
+<hr />
+{% endfor %}
+
+
+<script>
+
+function hslToHex(h, s, l) {
+    l /= 100;
+    const a = s * Math.min(l, 1 - l) / 100;
+    const f = n => {
+      const k = (n + h / 30) % 12;
+      const color = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
+      return Math.round(255 * color).toString(16).padStart(2, '0');   // convert to Hex and prefix "0" if needed
+    };
+    return `#${f(0)}${f(8)}${f(4)}`;
+}
+
+{% for comp_data in all_comp_data %}
+
+    dom = document.getElementById("table-{{ comp_data.comp.id }}")
+    //console.log("{{ comp_data.comp.name }}")
+    var cells = dom.querySelectorAll("td");
+
+    values = []
+    for (var i = 0; i < cells.length; i++) {
+        if(!isNaN(cells[i].innerHTML) && cells[i].id != "col1"){
+            values.push(parseFloat(cells[i].innerHTML))
+        }
+    }
+
+    //console.log(values)
+    max = Math.max(...values)
+    min = Math.min(...values)
+
+    for (var i = 0; i < cells.length; i++) {
+        if(!isNaN(cells[i].innerHTML) && cells[i].id != "col1"){
+           color = (parseFloat(cells[i].innerHTML)-min)/(max-min)
+           if(isNaN(color)){
+               color = 0
+           }
+           color *= 120
+            cells[i].setAttribute("style","background-color: "+hslToHex(color,100,75))
+           //console.log(color)
+        }
+    }
+
+    values = []
+    for (var i = 0; i < cells.length; i++) {
+        if(!isNaN(cells[i].innerHTML) && cells[i].id == "col1"){
+            values.push(parseFloat(cells[i].innerHTML))
+        }
+    }
+
+    //console.log(values)
+    max = Math.max(...values)
+    min = Math.min(...values)
+
+    for (var i = 0; i < cells.length; i++) {
+        if(!isNaN(cells[i].innerHTML) && cells[i].id == "col1"){
+           color = (parseFloat(cells[i].innerHTML)-min)/(max-min)
+           if(isNaN(color)){
+               color = 0
+           }
+           color *= 120
+            cells[i].setAttribute("style","background-color: "+hslToHex(color,100,75))
+           //console.log(color)
+        }
+    }
+
+
+
+{% endfor %}
+
+
+
+</script>
+
+
+
+
+{% endblock content %}
