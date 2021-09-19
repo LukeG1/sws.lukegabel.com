@@ -14,7 +14,7 @@ from decimal import *
 #----------------------------------------------------------------------- CONFIG
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'hejgdfjlkhgjlkhg347ty7854hgudifg437895hgreoiu344t'
+app.config['SECRET_KEY'] = '   SECRET KEY   '
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site012.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
@@ -23,8 +23,8 @@ login_manager = LoginManager(app)
 app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = "fastfrisbees@gmail.com"
-app.config['MAIL_PASSWORD'] = "whiteboards1!"
+app.config['MAIL_USERNAME'] = "   EMAIL   "
+app.config['MAIL_PASSWORD'] = "   EMAIL PASSWORD   "
 mail = Mail(app)
 
 #----------------------------------------------------------------------- IMPORTS FOR ROUTES
@@ -115,7 +115,7 @@ class Groupme:
         if(r.status_code != 202): raise Exception('INVALID AUTHENTICATION, CHECK TOKEN OR INTERNET CONNECTION')
 
 
-gpme = Groupme("cb6dd2b0b03b01392aed6ecce0eb34a6")
+gpme = Groupme("   GROUPME AUTHENTICATION   ")
 
 #----------------------------------------------------------------------- Admin Stuff
 
